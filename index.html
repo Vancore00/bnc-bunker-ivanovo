@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>BUNKER #BNC // ACCESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            font-family: 'VT323', monospace;
+            font-size: 24px;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            cursor: default;
+            user-select: none;
+        }
+        .terminal {
+            border: 1px solid #0f0;
+            padding: 20px;
+            background: #000;
+            height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 0 10px #0f0;
+        }
+        .cursor {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 0%,50%{opacity:1;} 51%,100%{opacity:0;} }
+        .btn {
+            background: #000;
+            border: 2px solid #0f0;
+            color: #0f0;
+            padding: 15px 40px;
+            font-family: 'VT323', monospace;
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #0f0;
+            color: #000;
+            box-shadow: 0 0 20px #0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="ambient" loop>
+        <source src="https://assets.mixkit.co/active_preview/mp3/4462/4462.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="terminal" id="screen">
+        <div id="text"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="inputZone" style="display:none; margin-top:20px;">
+        <span style="color:#0f0;">&gt;</span>
+        <input type="text" id="commandInput" autocomplete="off" style="background:#000; border:none; color:#0f0; font-family:'VT323', monospace; font-size:24px; width:70%;">
+    </div>
+
+    <script>
+        const audio = document.getElementById('ambient');
+        const screen = document.getElementById('text');
+        const cursor = document.querySelector('.cursor');
+        const inputZone = document.getElementById('inputZone');
+        const commandInput = document.getElementById('commandInput');
+
+        // Запускаем звук
+        audio.volume = 0.1;
+        audio.play().catch(() => {
+            // Если браузер блокирует звук, просим кликнуть
+            screen.innerHTML += '<br>[КЛИКНИТЕ В ЛЮБОМ МЕСТЕ ДЛЯ АКТИВАЦИИ ЗВУКА]';
+            window.addEventListener('click', () => { audio.play(); screen.innerHTML = ''; typeWriter(); });
+        });
+
+        const lines = [
+            "[20:48:12] // ИНИЦИАЦИЯ ПРОТОКОЛА: ДОСТУП",
+            "[20:48:13] // Локация: БУНКЕР #BNC | Координаты: г. Иваново",
+            "[20:48:14] // Статус систем: КРИТИЧЕСКИЙ",
+            "[20:48:15] // Владелец узла: БИФ | Смотритель: СОПАФА",
+            "[20:48:16] // ОШИБКА: Внешний сигнал нестабилен.",
+            "[20:48:17] // Для входа введите код допуска.",
+            "[20:48:18] // > "
+        ];
+        
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (lineIndex < lines.length) {
+                if (charIndex < lines[lineIndex].length) {
+                    screen.innerHTML += lines[lineIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 30);
+                } else {
+                    screen.innerHTML += "<br>";
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeWriter, 50);
+                }
+            } else {
+                cursor.remove();
+                inputZone.style.display = 'block';
+                commandInput.focus();
+            }
+        }
+
+        typeWriter();
+
+        commandInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const cmd = commandInput.value;
+                screen.innerHTML += cmd + "<br>";
+                
+                if (cmd.toLowerCase() === 'bif' || cmd.toLowerCase() === 'sofa' || cmd.toLowerCase() === 'repo') {
+                    screen.innerHTML += "// ДОСТУП ПОДТВЕРЖДЕН.<br>// ЗАГРУЗКА МЕНЮ...<br><br>";
+                    screen.innerHTML += '<a href="https://bif-sopafa-bunker.github.io" class="btn" target="_blank">[ ВОЙТИ НА ГОТОВЫЙ САЙТ ]</a>';
+                } else {
+                    screen.innerHTML += "// ОШИБКА: КОД НЕ РАСПОЗНАН.<br>// > ";
+                }
+                
+                commandInput.value = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
