@@ -2,44 +2,119 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>BUNKER #BNC // ACCESS</title>
+    <title>BUNKER #BNC // SIGNAL LOST</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --glitch-color: #00ff00;
+            --bg: #000;
+        }
         body {
-            background-color: #0a0a0a;
-            color: #00ff00;
+            background: var(--bg);
+            color: var(--glitch-color);
             font-family: 'VT323', monospace;
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
             padding: 20px;
             overflow: hidden;
-            cursor: default;
-            user-select: none;
+            position: relative;
         }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEX///8AAABVVVUAAABkZGT///+fn5+ZmZnOzs7a2trFxcV/f3+AgICMjIyXl5e3t7fJycnAwMCHh4fZ2dnV1dX29vbMzMwAAAD///8zMzPn5+e/v7+jo6O4uLhycnJsbGxpaWl8fHxwcHBgYGB/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39 тут длинный base64 шум');
+            opacity: 0.1;
+            pointer-events: none;
+            animation: grain 8s steps(10) infinite;
+        }
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(5%, -15%); }
+            40% { transform: translate(10%, 10%); }
+            50% { transform: translate(-10%, 5%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, -10%); }
+            80% { transform: translate(-10%, 15%); }
+            90% { transform: translate(5%, 5%); }
+        }
+        
         .terminal {
+            position: relative;
             border: 1px solid #0f0;
-            padding: 20px;
-            background: #000;
-            height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 0 10px #0f0;
+            padding: 15px;
+            background: rgba(0,0,0,0.8);
+            box-shadow: 0 0 20px #0f0;
+            max-width: 800px;
+            margin: 40px auto;
+            text-shadow: 0 0 5px #0f0;
         }
         .cursor {
             animation: blink 1s step-end infinite;
+            color: #0f0;
         }
         @keyframes blink { 0%,50%{opacity:1;} 51%,100%{opacity:0;} }
+        
+        .glitch {
+            position: relative;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            clip: rect(0, 0, 0, 0);
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #f00;
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 #00f;
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(20px, 9999px, 10px, 0); }
+            5% { clip: rect(40px, 9999px, 120px, 0); }
+            10% { clip: rect(10px, 9999px, 100px, 0); }
+            15% { clip: rect(80px, 9999px, 20px, 0); }
+            20% { clip: rect(50px, 9999px, 60px, 0); }
+            25% { clip: rect(90px, 9999px, 10px, 0); }
+            30% { clip: rect(30px, 9999px, 90px, 0); }
+            35% { clip: rect(70px, 9999px, 50px, 0); }
+            40% { clip: rect(10px, 9999px, 40px, 0); }
+            45% { clip: rect(60px, 9999px, 110px, 0); }
+            50% { clip: rect(20px, 9999px, 70px, 0); }
+            55% { clip: rect(100px, 9999px, 20px, 0); }
+            60% { clip: rect(40px, 9999px, 80px, 0); }
+            65% { clip: rect(10px, 9999px, 60px, 0); }
+            70% { clip: rect(90px, 9999px, 30px, 0); }
+            75% { clip: rect(50px, 9999px, 100px, 0); }
+            80% { clip: rect(70px, 9999px, 20px, 0); }
+            85% { clip: rect(30px, 9999px, 90px, 0); }
+            90% { clip: rect(10px, 9999px, 50px, 0); }
+            95% { clip: rect(60px, 9999px, 10px, 0); }
+            100% { clip: rect(80px, 9999px, 40px, 0); }
+        }
+
         .btn {
-            background: #000;
-            border: 2px solid #0f0;
+            background: transparent;
+            border: 1px solid #0f0;
             color: #0f0;
-            padding: 15px 40px;
+            padding: 10px 30px;
             font-family: 'VT323', monospace;
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
-            transition: all 0.3s;
+            margin: 10px 5px;
+            transition: all 0.2s;
+            text-shadow: 0 0 10px #0f0;
         }
         .btn:hover {
             background: #0f0;
@@ -54,30 +129,31 @@
         <source src="https://assets.mixkit.co/active_preview/mp3/4462/4462.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="terminal" id="screen">
+    <div class="terminal">
         <div id="text"></div>
         <span class="cursor">_</span>
     </div>
 
-    <div id="inputZone" style="display:none; margin-top:20px;">
+    <div id="inputZone" style="display:none; text-align:center; margin-top:20px;">
         <span style="color:#0f0;">&gt;</span>
-        <input type="text" id="commandInput" autocomplete="off" style="background:#000; border:none; color:#0f0; font-family:'VT323', monospace; font-size:24px; width:70%;">
+        <input type="text" id="commandInput" autocomplete="off" style="background:#000; border:1px solid #0f0; color:#0f0; font-family:'VT323', monospace; font-size:24px; width:60%; padding:10px;">
     </div>
-    window.location.href = "menu.html";
+
+    <div id="menu" style="display:none; text-align:center; margin-top:40px;">
+        <div class="glitch" data-text="БИФ">БИФ</div>
+        <a href="menu.html" class="btn">[ ВОЙТИ ]</a>
+    </div>
+
     <script>
         const audio = document.getElementById('ambient');
         const screen = document.getElementById('text');
         const cursor = document.querySelector('.cursor');
         const inputZone = document.getElementById('inputZone');
+        const menu = document.getElementById('menu');
         const commandInput = document.getElementById('commandInput');
 
-        // Запускаем звук
         audio.volume = 0.1;
-        audio.play().catch(() => {
-            // Если браузер блокирует звук, просим кликнуть
-            screen.innerHTML += '<br>[КЛИКНИТЕ В ЛЮБОМ МЕСТЕ ДЛЯ АКТИВАЦИИ ЗВУКА]';
-            window.addEventListener('click', () => { audio.play(); screen.innerHTML = ''; typeWriter(); });
-        });
+        audio.play();
 
         const lines = [
             "[20:48:12] // ИНИЦИАЦИЯ ПРОТОКОЛА: ДОСТУП",
@@ -97,12 +173,12 @@
                 if (charIndex < lines[lineIndex].length) {
                     screen.innerHTML += lines[lineIndex].charAt(charIndex);
                     charIndex++;
-                    setTimeout(typeWriter, 30);
+                    setTimeout(typeWriter, 25);
                 } else {
                     screen.innerHTML += "<br>";
                     lineIndex++;
                     charIndex = 0;
-                    setTimeout(typeWriter, 50);
+                    setTimeout(typeWriter, 40);
                 }
             } else {
                 cursor.remove();
@@ -115,17 +191,16 @@
 
         commandInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
-                const cmd = commandInput.value;
-                screen.innerHTML += cmd + "<br>";
+                const cmd = commandInput.value.toLowerCase();
                 
-                if (cmd.toLowerCase() === 'bif' || cmd.toLowerCase() === 'sofa' || cmd.toLowerCase() === 'repo') {
-                    screen.innerHTML += "// ДОСТУП ПОДТВЕРЖДЕН.<br>// ЗАГРУЗКА МЕНЮ...<br><br>";
-                    screen.innerHTML += '<a href="https://bif-sopafa-bunker.github.io" class="btn" target="_blank">[ ВОЙТИ НА ГОТОВЫЙ САЙТ ]</a>';
+                if (cmd === 'bif' || cmd === 'sofa' || cmd === 'repo') {
+                    document.getElementById('text').style.display = 'none';
+                    inputZone.style.display = 'none';
+                    menu.style.display = 'block';
                 } else {
-                    screen.innerHTML += "// ОШИБКА: КОД НЕ РАСПОЗНАН.<br>// > ";
+                    screen.innerHTML += "<br>// ОШИБКА: ДОСТУП ЗАКРЫТ.<br>// > ";
+                    commandInput.value = "";
                 }
-                
-                commandInput.value = "";
             }
         });
     </script>
